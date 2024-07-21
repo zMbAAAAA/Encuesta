@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio sobre Nivel Educativo de la Comunidad Peruana en Italia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #004080;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 5px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        select,
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        select {
+            background-color: #f9f9f9;
+            position: relative;
+        }
+
+        select:focus {
+            background-color: #ffffff;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+            outline: none;
+        }
+
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .select-wrapper::after {
+            content: '▼';
+            font-size: 12px;
+            color: #333;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        select {
+            cursor: pointer;
+            background: #f0f8ff;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #0066cc;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004080;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Estudio sobre Nivel Educativo de la Comunidad Peruana en Italia</h1>
+
+    <form>
+        <!-- Sección 1: Información Demográfica -->
+        <h2>Sección 1: Información Demográfica</h2>
+        <label for="ciudad">In quale città d'Italia risiedi attualmente?</label>
+        <div class="select-wrapper">
+            <select id="ciudad" name="ciudad">
+                <option value="Roma">Roma</option>
+                <option value="Milano">Milano</option>
+                <option value="Napoli">Napoli</option>
+                <option value="Torino">Torino</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Genova">Genova</option>
+                <option value="Bologna">Bologna</option>
+                <option value="Firenze">Firenze</option>
+                <option value="Venezia">Venezia</option>
+                <option value="Altro">Altro</option>
+            </select>
+        </div><br><br>
+
+        <label for="edad">¿Cuál es tu rango de edad?</label>
+        <div class="radio-group">
+            <input type="radio" id="edad1" name="edad" value="18-25">
+            <label for="edad1">18-25</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="edad2" name="edad" value="26-35">
+            <label for="edad2">26-35</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="edad3" name="edad" value="36-45">
+            <label for="edad3">36-45</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="edad4" name="edad" value="46-55">
+            <label for="edad4">46-55</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="edad5" name="edad" value="56 o más">
+            <label for="edad5">56 o más</label>
+        </div><br>
+
+        <label for="genero">¿Cuál es tu género?</label>
+        <div class="radio-group">
+            <input type="radio" id="masculino" name="genero" value="Masculino">
+            <label for="masculino">Masculino</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="femenino" name="genero" value="Femenino">
+            <label for="femenino">Femenino</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="otro" name="genero" value="Otro">
+            <label for="otro">Otro</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="prefiero_no_decirlo" name="genero" value="Prefiero no decirlo">
+            <label for="prefiero_no_decirlo">Prefiero no decirlo</label>
+        </div><br>
+
+        <!-- Sección 2: Educación Secundaria -->
+        <h2>Sección 2: Educación Secundaria</h2>
+        <label for="termino_secundaria">¿Terminaste la educación secundaria en Perú?</label>
+        <div class="radio-group">
+            <input type="radio" id="secundaria_si" name="termino_secundaria" value="Sí">
+            <label for="secundaria_si">Sí</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="secundaria_no" name="termino_secundaria" value="No">
+            <label for="secundaria_no">No</label>
+        </div><br>
+
+        <div id="anio_termino_secundaria" class="hidden">
+            <label for="anio_secundaria">Si respondiste "Sí", ¿en qué año terminaste la secundaria?</label>
+            <input type="text" id="anio_secundaria" name="anio_secundaria" placeholder="Ejemplo: 2005"><br><br>
+        </div>
+
+        <div id="razon_no_termino_secundaria" class="hidden">
+            <label for="razon_no_termino">Si respondiste "No", ¿cuál fue la razón principal por la que no
+                terminaste?</label>
+            <div class="radio-group">
+                <input type="radio" id="razon_economicas" name="razon_no_termino" value="Económicas">
+                <label for="razon_economicas">Económicas</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="razon_falta_interes" name="razon_no_termino" value="Falta de interés">
+                <label for="razon_falta_interes">Falta de interés</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="razon_otras" name="razon_no_termino" value="Otras">
+                <label for="razon_otras">Otras</label>
+            </div><br>
+        </div>
+
+        <label for="educacion_suficiente">¿Consideras que la educación secundaria que recibiste en Perú fue suficiente
+            para tus necesidades en Italia?</label>
+        <div class="radio-group">
+            <input type="radio" id="educacion_suficiente_si" name="educacion_suficiente" value="Sí">
+            <label for="educacion_suficiente_si">Sí</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="educacion_suficiente_no" name="educacion_suficiente" value="No">
+            <label for="educacion_suficiente_no">No</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="educacion_suficiente_parcialmente" name="educacion_suficiente" value="Parcialmente">
+            <label for="educacion_suficiente_parcialmente">Parcialmente</label>
+        </div><br>
+
+        <label for="dificultades_trabajo">¿Has tenido dificultades para encontrar trabajo en Italia debido a tu nivel de
+            educación?</label>
+        <div class="radio-group">
+            <input type="radio" id="dificultades_trabajo_si" name="dificultades_trabajo" value="Sí">
+            <label for="dificultades_trabajo_si">Sí</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="dificultades_trabajo_no" name="dificultades_trabajo" value="No">
+            <label for="dificultades_trabajo_no">No</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="dificultades_trabajo_no_busque" name="dificultades_trabajo"
+                value="No he buscado trabajo">
+            <label for="dificultades_trabajo_no_busque">No he buscado trabajo</label>
+        </div><br>
+
+        <!-- Sección 3: Experiencias Adicionales (Opcional) -->
+        <h2>Sección 3: Experiencias Adicionales (Opcional)</h2>
+        <label for="programas_educacion">¿Te gustaría tener acceso a programas de educación o capacitación en
+            Italia?</label>
+        <div class="radio-group">
+            <input type="radio" id="programas_educacion_si" name="programas_educacion" value="Sí">
+            <label for="programas_educacion_si">Sí</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="programas_educacion_no" name="programas_educacion" value="No">
+            <label for="programas_educacion_no">No</label>
+        </div><br>
+
+        <label for="tipos_programas">¿Qué tipo de programas te interesarían?</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="programa_idiomas" name="tipos_programas" value="Idiomas">
+            <label for="programa_idiomas">Idiomas</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="programa_computacion" name="tipos_programas" value="Computación">
+            <label for="programa_computacion">Computación</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="programa_oficios" name="tipos_programas" value="Oficios">
+            <label for="programa_oficios">Oficios</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="programa_otros" name="tipos_programas" value="Otros">
+            <label for="programa_otros">Otros</label>
+        </div><br>
+
+        <label for="comentarios">¿Tienes algún comentario o sugerencia adicional sobre la educación de los peruanos en
+            Italia?</label>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50"
+            placeholder="Escribe aquí tus comentarios"></textarea><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <p>¡Gracias por participar en esta encuesta! Tus respuestas son valiosas para comprender mejor las necesidades
+        educativas de la comunidad peruana en Italia.</p>
+
+    <script>
+        document.getElementById('secundaria_si').onclick = function () {
+            document.getElementById('anio_termino_secundaria').classList.remove('hidden');
+            document.getElementById('razon_no_termino_secundaria').classList.add('hidden');
+        }
+        document.getElementById('secundaria_no').onclick = function () {
+            document.getElementById('anio_termino_secundaria').classList.add('hidden');
+            document.getElementById('razon_no_termino_secundaria').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
